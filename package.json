@@ -1,0 +1,22 @@
+{
+  "name": "ev-optimizer",
+  "version": "1.0.0",
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "start": "npx tsc && node ./dist/index.js",
+    "test": "vitest",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@pkmn/dex": "^0.9.35",
+    "@pkmn/sets": "^5.1.2",
+    "@smogon/calc": "^0.10.0",
+    "zod": "^3.25.74"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.10",
+    "happy-dom": "^18.0.1",
+    "vitest": "^3.2.4"
+  }
+}
