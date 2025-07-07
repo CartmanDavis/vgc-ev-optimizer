@@ -1,0 +1,11 @@
+Calyrex-Shadow @ Life Orb  
+Ability: As One (Spectrier)  
+Level: 50  
+Tera Type: Dark  
+EVs: 28 HP / 4 Def / 220 SpA / 4 SpD / 252 Spe  
+Timid Nature  
+IVs: 0 Atk  
+- Astral Barrage  
+- Psychic  
+- Pollen Puff  
+- Protect  

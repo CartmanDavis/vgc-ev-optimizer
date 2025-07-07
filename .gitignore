@@ -139,5 +139,9 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 # Data directory
-data/*
+!data/sets
+data/sets/*
 !data/sets/example.txt
+!data/constraints
+data/constraints/*
+!data/constraints/example.json
