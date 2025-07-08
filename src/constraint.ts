@@ -3,9 +3,11 @@ import { readFileSync } from 'fs';
 import z from 'zod';
 
 import { Field, Move } from "@smogon/calc";
-import { CURRENT_GEN, PARAM_DIR } from './constants.js';
+import { CURRENT_GEN, CONSTRAINTS_DIR } from './constants.js';
 
 import { Pokemon } from './pokemon.js';
+
+import { StatsTable } from '@pkmn/dex';
 
 const constraintSchema = z.object({
   hits: z.number().min(0).default(1),
@@ -35,7 +37,7 @@ export type Constraint = DefensiveConstraint | OffensiveConstraint;
 
 
 export function readFileConstraints(fileName: string): Constraint {
-  const buff = readFileSync(PARAM_DIR + fileName, 'utf-8');
+  const buff = readFileSync(CONSTRAINTS_DIR + fileName, 'utf-8');
   const asJson = JSON.parse(buff);
   const parsed = constraintSchema.parse(asJson);
   return {
@@ -46,4 +48,11 @@ export function readFileConstraints(fileName: string): Constraint {
     rollThreshold: parsed.rollThreshold,
     set: Pokemon.fromText(parsed.set)
   }
+}
+
+/**
+ * TODO: 
+ */
+export function satisfyDefensiveConstraint(name: string, constraint: Constraint): Partial<StatsTable> | null {
+  throw new Error('Not Implemented')
 }
