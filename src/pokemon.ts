@@ -18,8 +18,11 @@ export class Pokemon extends SmogonPokemon {
    * Builds a pokemon from a text set of Showdown format
    */
   static fromText(text: string) {
-    const set = Sets.importSet(text, Dex.forGen(CURRENT_GEN))
-    return new Pokemon(CURRENT_GEN, set.species!, set as Partial<State.Pokemon>)
+    const set = Sets.importSet(text, Dex.forGen(CURRENT_GEN));
+    return new Pokemon(CURRENT_GEN, set.species!, {
+      ...(set as Partial<State.Pokemon>),
+      level: set.level ?? 50,
+    });
   }
 
   /**

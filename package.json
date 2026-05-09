@@ -17,6 +17,7 @@
   "devDependencies": {
     "@types/node": "^24.0.10",
     "happy-dom": "^18.0.1",
+    "typescript": "^6.0.3",
     "vitest": "^3.2.4"
   }
 }

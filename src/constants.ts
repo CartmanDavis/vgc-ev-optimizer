@@ -9,5 +9,5 @@ export const CONSTRAINTS_DIR = DATA_DIR + 'constraints/'
 /* Current generation of Pokemon */
 export const CURRENT_GEN = Dex.forGen(9).gen;
 
-export const MAXIMUM_EVS_TOTAL = 512;
+export const MAXIMUM_EVS_TOTAL = 510;
 export const MAXIMUM_EVS_PER_STAT = 252;
