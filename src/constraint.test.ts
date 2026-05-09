@@ -36,6 +36,6 @@ describe('Constraint', () => {
 
     test('Satisfies a defensive constraint', () => {
 
-    })
-  })
+    });
+  });
 })

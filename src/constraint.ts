@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 
 import z from 'zod';
 
-import { Field, Move } from "@smogon/calc";
+import { calculate, Field, Move } from "@smogon/calc";
 import { CURRENT_GEN, CONSTRAINTS_DIR } from './constants.js';
 
 import { Pokemon } from './pokemon.js';
@@ -54,5 +54,29 @@ export function readFileConstraints(fileName: string): Constraint {
  * TODO: 
  */
 export function satisfyDefensiveConstraint(name: string, constraint: Constraint): Partial<StatsTable> | null {
+
+  const attacker = constraint.set;
+  const defender = Pokemon.fromText(name);
+  const move = constraint.move;
+  const field = constraint.field;
+
+  const damageCalc = calculate(
+    CURRENT_GEN,
+    attacker,
+    defender,
+    move,
+    field
+  );
+
+  // the above call to calculate shows how to run a damage calc
+
   throw new Error('Not Implemented')
 }
+
+export function satisfyOffensiveConstraint(name: string, constraint: Constraint): Partial<StatsTable> | null {
+  const { hits, set, move, field, rollThreshold } = constraint;
+  // TODO: implement
+  return null;
+}
+
+
